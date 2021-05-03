@@ -1,0 +1,461 @@
+<!Doctype HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pizza Order Form</title>
+	
+	<script language="Javascript">
+	function disableBurger(){
+		var chklist = document.getElementsByClassName('addOns');
+		var BurgerRadio = document.getElementsByName('patty');
+		var BurgerBuns = document.getElementsByName('buns');
+		var BurgerQuan = document.getElementsByName('burgerQuan');
+		
+		var chk = !document.getElementById('burgers').checked;
+		for(var i=0;i<chklist.length;i++){
+			chklist[i].disabled=chk;
+			chklist[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<BurgerRadio.length;i++){
+			BurgerRadio[i].disabled=chk;
+			BurgerRadio[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<BurgerBuns.length;i++){
+			BurgerBuns[i].disabled=chk;
+			BurgerBuns[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<BurgerQuan.length;i++){
+			BurgerQuan[i].disabled=chk;
+			BurgerQuan[i].value=0;
+			submit.disabled=chk;
+		}
+	}
+	
+	function disablePasta(){
+		var chklistSauce = document.getElementsByName('sauce');
+		var pastaExtraSauce = document.getElementsByName('extraSauce');
+		var pastaExtraCheese = document.getElementsByName('extraCheese');
+		var pastaQuan = document.getElementsByName('pastaQuan');
+		var pastaAddons = document.getElementsByName('pastaAddons');
+		
+		var chk = !document.getElementById('pasta').checked;
+		for(var i=0;i<chklistSauce.length;i++){
+			chklistSauce[i].disabled=chk;
+			chklistSauce[i].selectedIndex = "-1";
+			submit.disabled=chk;
+		}
+		
+		for(var i=0;i<pastaAddons.length;i++){
+			pastaAddons[i].disabled=true;
+			pastaAddons[i].selectedIndex = "-1";
+			submit.disabled=chk;
+		}
+		
+		for(var i=0;i<pastaExtraSauce.length;i++){
+			pastaExtraSauce[i].disabled=chk;
+			pastaExtraSauce[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<pastaExtraCheese.length;i++){
+			pastaExtraCheese[i].disabled=chk;
+			pastaExtraCheese[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<pastaQuan.length;i++){
+			pastaQuan[i].disabled=chk;
+			pastaQuan[i].value=0;
+			submit.disabled=chk;
+		}
+	}
+	
+	function disablepastaAddons(){
+	var pastaAddons = document.getElementsByName('pastaAddons');
+	
+	var chkSauce = document.getElementsByName('sauce').selectedIndex="-1";
+	for(var i=0;i<pastaAddons.length;i++){
+			pastaAddons[i].disabled=false;
+		}
+	}
+	
+	function disableFries(){
+		var friesSize = document.getElementsByName('size');
+		var friesFlavor = document.getElementsByName('flavor');
+		var friesQuan = document.getElementsByName('friesQuan');
+		var pastaQuan = document.getElementsByName('pastaQuan');
+		
+		var chk = !document.getElementById('fries').checked;
+		for(var i=0;i<friesSize.length;i++){
+			friesSize[i].disabled=chk;
+			friesSize[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<friesFlavor.length;i++){
+			friesFlavor[i].disabled=chk;
+			friesFlavor[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<friesQuan.length;i++){
+			friesQuan[i].disabled=chk;
+			friesQuan[i].value=0;
+			submit.disabled=chk;
+		}
+	}
+	
+	function disableDrinks(){
+		var kindOfDrinks = document.getElementsByName('kindOfDrinks');
+		var drinkSize = document.getElementsByName('drinkSize');
+		var drinksQuan = document.getElementsByName('drinksQuan');
+		var pastaQuan = document.getElementsByName('pastaQuan');
+		
+		
+		var chk = !document.getElementById('drinks').checked;
+		for(var i=0;i<kindOfDrinks.length;i++){
+			kindOfDrinks[i].disabled=chk;
+			kindOfDrinks[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<drinkSize.length;i++){
+			drinkSize[i].disabled=chk;
+			drinkSize[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<drinksQuan.length;i++){
+			drinksQuan[i].disabled=chk;
+			drinksQuan[i].value=0;
+			submit.disabled=chk;
+		}
+	}
+	
+	
+	
+</script>
+    <style type="text/css">
+	
+	body{
+		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("ALAMBRA_IMAGES_ITBD/background2.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 750px;
+		height: 2660px;
+	}
+	
+	.title{
+		padding-top: 30px;	
+		font-size: 40px;
+		font-style: italic;
+		text-align: center;
+		font-family: 'Roboto', sans-serif;
+	}
+	
+	.form{
+		width: 950px;
+		background-color: #f2edd7ff;
+		margin: 80px auto;
+		height: 2630px;
+		border-radius: 40px;
+		font-family: riboto;
+		
+	}
+	
+	.info{
+		padding-top: 30px;
+		margin-left: 30px;
+	}
+	
+	.rounded{
+		border-radius: 40px;
+		width: 200px;
+		height: 35px;
+	}
+	
+	.address{
+		border-radius: 40px;
+		width: 300px;
+		height: 35px;
+	}
+	
+	label{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	hr{
+		border: 1px solid black;
+		width: 95%;
+	}
+	
+	.order{
+		margin-top: 30px;
+		margin-left: 30px;
+	}
+	
+	.order p{
+		font-size: 26px;
+		font-weight: bold;
+		text-align: center;
+		font-family: 'Roboto', sans-serif;
+	}
+	
+	.info p{
+		font-size: 26px;
+		font-weight: bold;
+		text-align: center;
+		margin-top: -15px;
+		font-family: 'Roboto', sans-serif;
+	}
+	
+	textarea{
+		resize: none;
+		width: 85%;
+		height: 100px;
+		margin-left: 50px;
+		display: block;
+		border-radius: 8px;
+	}
+	
+	#descript{
+		margin-left: 380px; 
+	}
+	
+	.orders{
+		margin-left: 30px;
+	}
+	
+	h3{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	.quan{
+		border-radius: 40px;
+		width: 45px;
+		text-align: center;
+	}
+	
+	img{
+		float: right;
+		width: 1000px;
+		
+	}
+	
+	input[type="submit"]{
+		background-color: #45b6fe;
+		color: white;
+		padding: 10px 15px;
+		font-weight: bold;
+		border-radius: 10px;
+	}
+	
+	input[type="reset"]{
+		background-color: red;
+		color: white;
+		padding: 10px 15px;
+		font-weight: bold;
+		border-radius: 10px;
+	}
+	
+	.foods{
+		width: 80%;
+		height: 130px;
+		float: right;
+		margin-right: 80px;
+	}
+	
+	#sauce{
+		width: 300px;
+		height: 140px;
+	}
+	
+	#pastaAddons{
+		width: 300px;
+		height: 140px;
+	}
+	
+	option{
+		font-size: 18px;
+	}
+	
+	option:hover{
+		background-color: #CEDADF;
+	}
+	
+	label{
+		font-family: 'Lato', sans-serif;
+	}
+	
+    </style>
+	
+</head>
+
+<body>
+    <!--SURNAME, FIRSTNAME-->
+    <!--DATE: -->
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	
+	<form action="">
+		<div class="form">
+		
+			<h1 class="title">Pizza Order</h1>
+			
+			
+			<div class="info">
+			<p>Customer Details</p>
+			<label for="fname">Full Name:</label><br><br>
+			<input type="text" name="fname" placeholder="First Name..." required maxlength="30" class="rounded"/> &emsp;&ensp;
+			<input type="text" name="lname" placeholder="Last Name..." required maxlength="30" class="rounded"/><br><br>
+			
+			<label for="contact">Contact Number:</label> &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+			<label for="email">Email Address:</label><br><br>
+			<input type="tel" name="contact" placeholder="Contact Number..." required class="rounded"/> &emsp;&ensp;
+			<input type="email" name="email" placeholder="Email Address..." required maxlength="30" class="rounded"/><br><br>
+			
+			<label for="address">Complete Address:</label><br><br>
+			<input type="text" name="address" placeholder="Complete Address..." required maxlength="50" class="address"/> &emsp;&ensp;
+			<br><br>
+			
+			<label for="description" id="descript">How to get there:</label><br><br>
+			<textarea id="description" name="description">
+			</textarea>
+			</div><br><hr>
+			
+			<div class="order">
+			<p>Order Details</p>
+			
+			<img src="ALAMBRA_IMAGES_ITBD/burger.jfif" class="foods"/><br><br><br><br><br>
+			<input type="checkbox" id="burgers" name="burgers" value="burger" onClick="disableBurger()">
+			<label for="burgers">Burgers</label><br>
+				
+				<div class="orders">	
+				
+					<h3>Choose Pattys and Add-ons:</h3>
+					
+					<input type="radio" name="patty" id="single" value="single" disabled>
+					<label for="single">Single Patty</label>&emsp;&emsp;&emsp;&emsp;
+				    <input type="checkbox" id="withCheese" name="withCheese" value="withCheese" class="addOns" disabled>
+				    <label for="withCheese">With Cheese</label>&emsp;&emsp;&emsp;&emsp;
+					<input type="checkbox" id="coleslaw" name="coleslaw" value="coleslaw" class="addOns" disabled>
+				    <label for="coleslaw">Coleslaw</label>&emsp;&emsp;&emsp;&emsp;
+					<input type="checkbox" id="onion" name="onion" value="onion" class="addOns" disabled>
+				    <label for="onion">Onion</label><br><br>
+					
+				    <input type="radio" name="patty" id="double" value="double" disabled required>
+					<label for="double">Double Patty</label>&emsp;&emsp;&emsp;&ensp;
+				    <input type="checkbox" id="tomato" name="tomato" value="tomato" class="addOns" disabled>
+				    <label for="tomato">Tomato</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;
+					<input type="checkbox" id="cucumber" name="cucumber" value="cucumber" class="addOns" disabled>
+				    <label for="cucumber">Cucumber</label>&emsp;&emsp;&emsp;
+					<input type="checkbox" id="bacon" name="bacon" value="bacon" class="addOns" disabled>
+				    <label for="bacon">Bacon</label><br><br>
+					
+					<h3>Choose Buns:</h3>
+					<input type="radio" name="buns" id="whiteBun" value="whiteBun" disabled required>
+					<label for="whiteBun">White bun</label><br><br>
+					<input type="radio" name="buns" id="wheatBun" value="wheatBun" disabled>
+					<label for="wheatBun">Wheat bun</label><br><br>
+					
+					<label for="burgerQuan">Quantity:</label><br><br>
+					<input type="number" name="burgerQuan" placeholder="0" required class="quan" min="1" max="10" disabled>
+					</div><br><br>
+				
+			<img src="ALAMBRA_IMAGES_ITBD/pasta.jpg" class="foods"/><br><br><br><br><br>
+			<input type="checkbox" id="pasta" name="pasta" value="pasta" onClick="disablePasta()">
+			<label for="pasta">Pasta</label><br>
+					
+					<div class="orders">
+					
+					<h3>Select Sauce:</h3>
+					
+					  <select name="sauce" id="sauce" multiple disabled required onClick="disablepastaAddons()">
+						<option value="carbonara">Carbonara</option>
+						<option value="spaghetti">Spaghetti</option>
+						<option value="bolognesePastaSauce">Bolognese Pasta Sauce</option>
+						<option value="pesto">Pesto</option>
+						<option value="marinaraSauce">Marinara Sauce</option>
+						<option value="alfredoPastaSauce">Alfredo Pasta Sauce</option>
+					  </select>
+					  
+					 <select name="pastaAddons" id="pastaAddons" multiple disabled> 
+					  <option value="extraCheese">Extra Cheese</option>
+						<option value="extraSauce">Extra Sauce</option>
+					  </select>
+					  
+					  <br><br>
+					
+					<label for="pastaQuan">Quantity (Per Box):</label><br><br>
+					<input type="number" name="pastaQuan" placeholder="0" required class="quan" min="1" max="10" disabled>
+					
+					</div><br><br>
+			
+			<img src="ALAMBRA_IMAGES_ITBD/fries.jpg" class="foods"/><br><br><br><br><br>			
+			<input type="checkbox" id="fries" name="fries" value="fries" onClick="disableFries()">
+			<label for="fries">Fries</label><br>
+				
+				<div class="orders">
+				
+				<h3>Choose Size:</h3>
+				
+				<input type="radio" name="size" id="small" value="small" disabled required>
+				<label for="small">Small</label>&emsp;&emsp;&nbsp;
+				<input type="radio" name="size" id="medium" value="medium" disabled>
+				<label for="medium">Medium</label>&emsp;&emsp;&nbsp;
+				<input type="radio" name="size" id="large" value="large" disabled>
+				<label for="large">Large</label>&emsp;&emsp;&nbsp;
+				
+				<h3>Choose Flavor:</h3>
+				
+				<input type="radio" name="flavor" id="bbq" value="bbq" disabled required>
+				<label for="bbq">Bbq</label>&emsp;&emsp;&nbsp;
+				<input type="radio" name="flavor" id="cheese" value="cheese" disabled>
+				<label for="cheese">Cheese</label>&emsp;&emsp;&nbsp;
+				<input type="radio" name="flavor" id="sourCream" value="sour cream" disabled>
+				<label for="sourCream">Sour cream</label>&emsp;&emsp;&nbsp;
+				<br><br>
+				
+				<label for="friesQuan">Quantity:</label><br><br>
+				<input type="number" name="friesQuan" placeholder="0" required class="quan" min="1" max="10" disabled>
+				</div><br><br>
+				
+			<img src="ALAMBRA_IMAGES_ITBD/drinks.jpg" class="foods"/><br><br><br><br><br>	
+			<input type="checkbox" id="drinks" name="drinks" value="drinks" onClick="disableDrinks()">
+			<label for="drinks">Drinks</label><br>
+			
+			<div class="orders">
+				
+				<h3>Choose Drinks:</h3>
+				
+				<input type="radio" name="kindOfDrinks" id="coke" value="coke" disabled required>
+				<label for="coke">Coke</label>&emsp;&emsp;&nbsp;
+				<input type="radio" name="kindOfDrinks" id="pepsi" value="pepsi" disabled>
+				<label for="pepsi">Pepsi</label>&emsp;&emsp;&nbsp;
+				<input type="radio" name="kindOfDrinks" id="sprite" value="sprite" disabled>
+				<label for="sprite">Sprite</label>&emsp;&emsp;&nbsp;<br>
+				
+				<h3>Choose Size:</h3>
+				
+				<input type="radio" name="drinkSize" id="smalDrink" value="small" disabled required>
+				<label for="smalDrink">Small</label>&emsp;&emsp;&nbsp;
+				<input type="radio" name="drinkSize" id="mediumDrink" value="medium" disabled>
+				<label for="mediumDrink">Medium</label>&emsp;&emsp;&nbsp;
+				<input type="radio" name="drinkSize" id="largeDrink" value="large" disabled>
+				<label for="largeDrink">Large</label>&emsp;&emsp;&nbsp;<br><br>
+				
+				<label for="drinksQuan">Quantity:</label><br><br>
+				<input type="number" name="drinksQuan" placeholder="0" required class="quan" min="1" max="10" disabled>
+				</div><br><br>
+				
+				<input type="submit" value="Submit" id="submit" disabled> &ensp;
+				<input type="reset" value="Reset">
+			</div>
+		</div>
+	</form>
+</body>
+</html>
