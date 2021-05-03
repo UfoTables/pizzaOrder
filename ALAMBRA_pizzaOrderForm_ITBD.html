@@ -10,6 +10,7 @@
 		var BurgerRadio = document.getElementsByName('patty');
 		var BurgerBuns = document.getElementsByName('buns');
 		var BurgerQuan = document.getElementsByName('burgerQuan');
+		var getOrder = document.getElementsByName('getOrder');
 		
 		var chk = !document.getElementById('burgers').checked;
 		for(var i=0;i<chklist.length;i++){
@@ -32,6 +33,11 @@
 			BurgerQuan[i].value=0;
 			submit.disabled=chk;
 		}
+		for(var i=0;i<getOrder.length;i++){
+			getOrder[i].disabled=chk;
+			getOrder[i].value=0;
+			submit.disabled=chk;
+		}
 	}
 	
 	function disablePasta(){
@@ -40,6 +46,7 @@
 		var pastaExtraCheese = document.getElementsByName('extraCheese');
 		var pastaQuan = document.getElementsByName('pastaQuan');
 		var pastaAddons = document.getElementsByName('pastaAddons');
+		var getOrder = document.getElementsByName('getOrder');
 		
 		var chk = !document.getElementById('pasta').checked;
 		for(var i=0;i<chklistSauce.length;i++){
@@ -69,6 +76,11 @@
 			pastaQuan[i].value=0;
 			submit.disabled=chk;
 		}
+		for(var i=0;i<getOrder.length;i++){
+			getOrder[i].disabled=chk;
+			getOrder[i].value=0;
+			submit.disabled=chk;
+		}
 	}
 	
 	function disablepastaAddons(){
@@ -85,6 +97,7 @@
 		var friesFlavor = document.getElementsByName('flavor');
 		var friesQuan = document.getElementsByName('friesQuan');
 		var pastaQuan = document.getElementsByName('pastaQuan');
+		var getOrder = document.getElementsByName('getOrder');
 		
 		var chk = !document.getElementById('fries').checked;
 		for(var i=0;i<friesSize.length;i++){
@@ -102,6 +115,11 @@
 			friesQuan[i].value=0;
 			submit.disabled=chk;
 		}
+		for(var i=0;i<getOrder.length;i++){
+			getOrder[i].disabled=chk;
+			getOrder[i].value=0;
+			submit.disabled=chk;
+		}
 	}
 	
 	function disableDrinks(){
@@ -109,7 +127,7 @@
 		var drinkSize = document.getElementsByName('drinkSize');
 		var drinksQuan = document.getElementsByName('drinksQuan');
 		var pastaQuan = document.getElementsByName('pastaQuan');
-		
+		var getOrder = document.getElementsByName('getOrder');
 		
 		var chk = !document.getElementById('drinks').checked;
 		for(var i=0;i<kindOfDrinks.length;i++){
@@ -127,6 +145,11 @@
 			drinksQuan[i].value=0;
 			submit.disabled=chk;
 		}
+		for(var i=0;i<getOrder.length;i++){
+			getOrder[i].disabled=chk;
+			getOrder[i].value=0;
+			submit.disabled=chk;
+		}
 	}
 	
 	
@@ -140,7 +163,7 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		height: 750px;
-		height: 2660px;
+		height: 3090px;
 	}
 	
 	.title{
@@ -155,7 +178,7 @@
 		width: 950px;
 		background-color: #f2edd7ff;
 		margin: 80px auto;
-		height: 2630px;
+		height: 3020px;
 		border-radius: 40px;
 		font-family: riboto;
 		
@@ -218,7 +241,11 @@
 	}
 	
 	#descript{
-		margin-left: 380px; 
+		margin-left: 350px; 
+	}
+	
+	#feedbacks{
+		margin-left: 180px; 
 	}
 	
 	.orders{
@@ -287,6 +314,13 @@
 		font-family: 'Lato', sans-serif;
 	}
 	
+	.getOrder{
+		margin-left: 350px;
+	}
+	
+	.getTheOrder{
+		margin-left: 150px;
+	}
     </style>
 	
 </head>
@@ -322,7 +356,7 @@
 			<input type="text" name="address" placeholder="Complete Address..." required maxlength="50" class="address"/> &emsp;&ensp;
 			<br><br>
 			
-			<label for="description" id="descript">How to get there:</label><br><br>
+			<label for="description" id="descript">How to get there?:</label><br><br>
 			<textarea id="description" name="description">
 			</textarea>
 			</div><br><hr>
@@ -451,6 +485,22 @@
 				<label for="drinksQuan">Quantity:</label><br><br>
 				<input type="number" name="drinksQuan" placeholder="0" required class="quan" min="1" max="10" disabled>
 				</div><br><br>
+				
+				<h3>FEEDBACK:</h3>
+				
+				<label for="feedback" id="feedbacks">Help us improve our order form by indicating your feedback!</label><br><br>
+				<textarea id="feedback" name="feedback">
+				</textarea>
+				<br><br>
+				
+				<h2 class="getTheOrder">Getting the Order:</h2>
+				
+				<input class="getOrder" type="radio" name="getOrder" id="pickUp" value="pickUp" disabled required>
+				<label for="pickUp">Pick-Up</label><br><br>
+				
+				<input class="getOrder" type="radio" name="getOrder" id="delivery" value="delivery" disabled required>
+				<label for="delivery">Delivery</label>
+				<br><br>
 				
 				<input type="submit" value="Submit" id="submit" disabled> &ensp;
 				<input type="reset" value="Reset">
