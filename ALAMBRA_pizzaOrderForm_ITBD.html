@@ -10,7 +10,6 @@
 		var BurgerRadio = document.getElementsByName('patty');
 		var BurgerBuns = document.getElementsByName('buns');
 		var BurgerQuan = document.getElementsByName('burgerQuan');
-		var getOrder = document.getElementsByName('getOrder');
 		
 		var chk = !document.getElementById('burgers').checked;
 		for(var i=0;i<chklist.length;i++){
@@ -29,10 +28,6 @@
 			BurgerQuan[i].disabled=chk;
 			BurgerQuan[i].value=0;
 		}
-		for(var i=0;i<getOrder.length;i++){
-			getOrder[i].disabled=chk;
-			getOrder[i].checked=false;
-		}
 	}
 	
 	function disablePasta(){
@@ -41,7 +36,6 @@
 		var pastaExtraCheese = document.getElementsByName('extraCheese');
 		var pastaQuan = document.getElementsByName('pastaQuan');
 		var pastaAddons = document.getElementsByName('pastaAddons');
-		var getOrder = document.getElementsByName('getOrder');
 		
 		var chk = !document.getElementById('pasta').checked;
 		for(var i=0;i<chklistSauce.length;i++){
@@ -66,10 +60,6 @@
 			pastaQuan[i].disabled=chk;
 			pastaQuan[i].value=0;
 		}
-		for(var i=0;i<getOrder.length;i++){
-			getOrder[i].disabled=chk;
-			getOrder[i].checked=false;
-		}
 	}
 	
 	function disablepastaAddons(){
@@ -86,7 +76,6 @@
 		var friesFlavor = document.getElementsByName('flavor');
 		var friesQuan = document.getElementsByName('friesQuan');
 		var pastaQuan = document.getElementsByName('pastaQuan');
-		var getOrder = document.getElementsByName('getOrder');
 		
 		var chk = !document.getElementById('fries').checked;
 		for(var i=0;i<friesSize.length;i++){
@@ -101,10 +90,6 @@
 			friesQuan[i].disabled=chk;
 			friesQuan[i].value=0;
 		}
-		for(var i=0;i<getOrder.length;i++){
-			getOrder[i].disabled=chk;
-			getOrder[i].checked=false;
-		}
 	}
 	
 	function disableDrinks(){
@@ -112,7 +97,6 @@
 		var drinkSize = document.getElementsByName('drinkSize');
 		var drinksQuan = document.getElementsByName('drinksQuan');
 		var pastaQuan = document.getElementsByName('pastaQuan');
-		var getOrder = document.getElementsByName('getOrder');
 		
 		var chk = !document.getElementById('drinks').checked;
 		for(var i=0;i<kindOfDrinks.length;i++){
@@ -126,10 +110,6 @@
 		for(var i=0;i<drinksQuan.length;i++){
 			drinksQuan[i].disabled=chk;
 			drinksQuan[i].value=0;
-		}
-		for(var i=0;i<getOrder.length;i++){
-			getOrder[i].disabled=chk;
-			getOrder[i].checked=false;
 		}
 	}
 	
@@ -476,10 +456,10 @@
 				
 				<h2 class="getTheOrder">Getting the Order:</h2>
 				
-				<input class="getOrder" type="radio" name="getOrder" id="pickUp" value="pickUp" disabled required>
+				<input class="getOrder" type="radio" name="getOrder" id="pickUp" value="pickUp" required>
 				<label for="pickUp">Pick-Up</label><br><br>
 				
-				<input class="getOrder" type="radio" name="getOrder" id="delivery" value="delivery" disabled required>
+				<input class="getOrder" type="radio" name="getOrder" id="delivery" value="delivery" required>
 				<label for="delivery">Delivery</label>
 				<br><br>
 				
