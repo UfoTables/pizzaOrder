@@ -51,6 +51,7 @@
 		for(var i=0;i<pastaExtraSauce.length;i++){
 			pastaExtraSauce[i].disabled=chk;
 			pastaExtraSauce[i].checked=false;
+			submit.disabled=chk;
 		}
 		for(var i=0;i<pastaExtraCheese.length;i++){
 			pastaExtraCheese[i].disabled=chk;
@@ -97,6 +98,7 @@
 		var drinkSize = document.getElementsByName('drinkSize');
 		var drinksQuan = document.getElementsByName('drinksQuan');
 		var pastaQuan = document.getElementsByName('pastaQuan');
+		var getOrder = document.getElementsByName('getOrder');
 		
 		var chk = !document.getElementById('drinks').checked;
 		for(var i=0;i<kindOfDrinks.length;i++){
@@ -113,13 +115,101 @@
 		}
 	}
 	
-	
-	
+	function resetAll(){
+		var chklist = document.getElementsByClassName('addOns');
+		var BurgerRadio = document.getElementsByName('patty');
+		var BurgerBuns = document.getElementsByName('buns');
+		var BurgerQuan = document.getElementsByName('burgerQuan');
+		
+		var chk = !document.getElementById('burgers').checked;
+		for(var i=0;i<chklist.length;i++){
+			chklist[i].disabled=true;
+		}
+		for(var i=0;i<BurgerRadio.length;i++){
+			BurgerRadio[i].disabled=true;
+		}
+		for(var i=0;i<BurgerBuns.length;i++){
+			BurgerBuns[i].disabled=true;
+		}
+		for(var i=0;i<BurgerQuan.length;i++){
+			BurgerQuan[i].disabled=true;;
+			BurgerQuan[i].value=0;
+		}
+		
+		var chklistSauce = document.getElementsByName('sauce');
+		var pastaExtraSauce = document.getElementsByName('extraSauce');
+		var pastaExtraCheese = document.getElementsByName('extraCheese');
+		var pastaQuan = document.getElementsByName('pastaQuan');
+		var pastaAddons = document.getElementsByName('pastaAddons');
+		
+		var chk = !document.getElementById('pasta').checked;
+		for(var i=0;i<chklistSauce.length;i++){
+			chklistSauce[i].disabled=true;
+			chklistSauce[i].selectedIndex = "-1";
+		}
+		
+		for(var i=0;i<pastaAddons.length;i++){
+			pastaAddons[i].disabled=true;
+			pastaAddons[i].selectedIndex = "-1";
+		}
+		
+		for(var i=0;i<pastaExtraSauce.length;i++){
+			pastaExtraSauce[i].disabled=true;
+			pastaExtraSauce[i].checked=false;
+			submit.disabled=chk;
+		}
+		for(var i=0;i<pastaExtraCheese.length;i++){
+			pastaExtraCheese[i].disabled=true;
+			pastaExtraCheese[i].checked=false;
+		}
+		for(var i=0;i<pastaQuan.length;i++){
+			pastaQuan[i].disabled=true;
+			pastaQuan[i].value=0;
+		}
+		
+		var friesSize = document.getElementsByName('size');
+		var friesFlavor = document.getElementsByName('flavor');
+		var friesQuan = document.getElementsByName('friesQuan');
+		var pastaQuan = document.getElementsByName('pastaQuan');
+		
+		var chk = !document.getElementById('fries').checked;
+		for(var i=0;i<friesSize.length;i++){
+			friesSize[i].disabled=true;
+			friesSize[i].checked=false;
+		}
+		for(var i=0;i<friesFlavor.length;i++){
+			friesFlavor[i].disabled=true;
+			friesFlavor[i].checked=false;
+		}
+		for(var i=0;i<friesQuan.length;i++){
+			friesQuan[i].disabled=true;
+			friesQuan[i].value=0;
+		}
+		
+		var kindOfDrinks = document.getElementsByName('kindOfDrinks');
+		var drinkSize = document.getElementsByName('drinkSize');
+		var drinksQuan = document.getElementsByName('drinksQuan');
+		var pastaQuan = document.getElementsByName('pastaQuan');
+		
+		var chk = !document.getElementById('drinks').checked;
+		for(var i=0;i<kindOfDrinks.length;i++){
+			kindOfDrinks[i].disabled=true;
+			kindOfDrinks[i].checked=false;
+		}
+		for(var i=0;i<drinkSize.length;i++){
+			drinkSize[i].disabled=true;
+			drinkSize[i].checked=false;
+		}
+		for(var i=0;i<drinksQuan.length;i++){
+			drinksQuan[i].disabled=true;
+			drinksQuan[i].value=0;
+		}
+	}
 </script>
     <style type="text/css">
 	
 	body{
-		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("background2.jpg");
+		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("ALAMBRA_IMAGES_ITBD/background2.jpg");
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -464,7 +554,7 @@
 				<br><br>
 				
 				<input type="submit" value="Submit" id="submit"> &ensp;
-				<input type="reset" value="Reset">
+				<input type="reset" value="Reset" onClick="resetAll()">
 			</div>
 		</div>
 	</form>
